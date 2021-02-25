@@ -45,7 +45,16 @@ while (Bichinho.saude > 0) and (Bichinho.fome < 100):
  \  .-'''-.  /
   '-\__Y__/-'
      `---`
-     \nOlá meu nome é {Bichinho.nome}. O que você deseja fazer comigo agora? \n1- Alimentar (-10 de fome)\n2- Dormir (+10 de saúde)\n3- Alterar nome\n4- Visualizar humor\n5- Visualizar idade\n6- Visualizar fome\n7- Visualizar saúde\nResposta: """)
+     \nOlá meu nome é {Bichinho.nome}. \n
+     Humor: {Bichinho.RetornarHumor()}\n
+     Idade: {Bichinho.RetornarIdade()}\n
+     Fome: {Bichinho.RetornarFome()}\n
+     Saude: {Bichinho.RetornarSaude()}\n
+     O que você deseja fazer comigo agora? \n
+     1- Alimentar (-10 de fome)\n
+     2- Dormir (+10 de saúde)\n
+     3- Alterar nome\n
+     Resposta: """)
     print('\n')
     if resposta == '1':
         Bichinho.AlterarFome(-10)
@@ -56,21 +65,13 @@ while (Bichinho.saude > 0) and (Bichinho.fome < 100):
     elif resposta == '3':
         nome2 = input('Qual nome deseja colocar? \n')
         Bichinho.AlterarNome(nome2)
-    elif resposta == '4':
-        print("Humor: ", Bichinho.RetornarHumor())
-    elif resposta == '5':
-        print("Idade: ", Bichinho.RetornarIdade())
-    elif resposta == '6':
-        print("Fome: ", Bichinho.RetornarFome())
-    elif resposta == '7':
-        print("Saude: ", Bichinho.RetornarSaude())
     else:
         print('Escolha um número válido!')
 else:
-    print("""\n------------------------------------------\n __         __
+    print(f"""\n------------------------------------------\n __         __
 /  \.-" "-./  \.
 \    -   -    /
  |   X   X   |
  \  .-'''-.  /
   '-\__Y__/-'
-     `---`\nVocê me deixou morrer!\n""")
+     `---`\n{Bichinho.nome} morreu!\n""")
